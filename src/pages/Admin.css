@@ -1,0 +1,464 @@
+.admin-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 14px;
+    padding-bottom: 100px;
+}
+
+.admin-loading {
+    text-align: center;
+    color: var(--text-muted);
+    padding: 40px;
+}
+
+.admin-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 4px;
+}
+
+.admin-header-actions {
+    display: flex;
+    gap: 6px;
+}
+
+.admin-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 900;
+    font-size: 16px;
+    color: var(--text);
+}
+
+.fixture-btn {
+    background: var(--text);
+    color: #fff;
+    border: none;
+    border-radius: 7px;
+    padding: 8px 14px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    cursor: pointer;
+    transition: background .15s;
+}
+
+.fixture-btn:hover {
+    background: var(--accent);
+}
+
+.admin-filter {
+    margin-bottom: 8px;
+}
+
+.filter-select {
+    width: 100%;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 7px;
+    padding: 8px 10px;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: var(--text);
+    outline: none;
+}
+
+.admin-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    padding: 14px;
+    margin-bottom: 10px;
+}
+
+.admin-card-header {
+    background: var(--header-bg);
+    border-bottom: 1px solid var(--card-border);
+    padding: 5px 12px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.admin-group {
+    font-size: 9px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+}
+
+.admin-time {
+    font-size: 9px;
+    color: var(--text-muted);
+}
+
+.admin-card-body {
+    padding: 10px 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.admin-team {
+    flex: 1;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    color: var(--text);
+    white-space: nowrap;
+}
+
+.admin-team.right {
+    text-align: right;
+}
+
+.admin-score {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.admin-input {
+    width: 34px;
+    height: 34px;
+    background: var(--bg);
+    border: 1.5px solid var(--input-border);
+    border-radius: 10px;
+    color: var(--text);
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    text-align: center;
+    outline: none;
+    transition: border-color .15s;
+    -moz-appearance: textfield;
+}
+
+.admin-input::-webkit-outer-spin-button,
+.admin-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+.admin-input:focus {
+    border-color: var(--accent);
+}
+
+.admin-sep {
+    color: #ccc;
+    font-weight: 700;
+    font-size: 13px;
+}
+
+.admin-stadium {
+    padding: 2px 12px 4px;
+    font-size: 10px;
+    color: var(--text-light);
+}
+
+.admin-save-area {
+    padding-top: 10px;
+}
+
+.admin-save-sticky {
+    position: sticky;
+    bottom: 0;
+    background: linear-gradient(transparent, var(--bg) 30%);
+    padding: 20px 0 10px;
+    margin-top: -10px;
+    z-index: 10;
+}
+
+.admin-save-all {
+    width: 100%;
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    padding: 14px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 800;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all .2s;
+}
+
+.admin-save-all:active {
+    transform: scale(0.97);
+}
+
+.admin-save-all.saved {
+    background: var(--text);
+}
+
+.admin-save-all:disabled {
+    opacity: .7;
+    pointer-events: none;
+}
+
+/* ── Tabs ── */
+.admin-tabs {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 10px;
+}
+
+.atab {
+    flex: 1;
+    padding: 9px 6px;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    color: var(--text);
+    cursor: pointer;
+    transition: all .15s;
+    white-space: nowrap;
+}
+
+.atab.active {
+    background: var(--accent);
+    color: #fff;
+    border-color: var(--accent);
+}
+
+/* ── Dashboard ── */
+.dash-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.dash-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+}
+
+.dash-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 14px;
+    padding: 16px;
+    text-align: center;
+}
+
+.dash-num {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 900;
+    font-size: 26px;
+    color: var(--accent);
+    line-height: 1.1;
+}
+
+.dash-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text);
+    margin-top: 4px;
+}
+
+.dash-sub {
+    font-size: 10px;
+    color: var(--text-light);
+    margin-top: 2px;
+}
+
+.dash-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 4px;
+}
+
+.dash-action-btn {
+    flex: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    padding: 10px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    color: var(--text);
+    cursor: pointer;
+    transition: all .15s;
+}
+
+.dash-action-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.dash-action-btn.export:hover {
+    border-color: var(--warning);
+    color: var(--warning);
+}
+
+.dash-action-btn:disabled {
+    opacity: .6;
+    pointer-events: none;
+}
+
+.dash-note {
+    font-size: 10px;
+    color: var(--text-light);
+    line-height: 1.4;
+    padding: 0 2px;
+}
+
+/* ── football-data.org ── */
+.dash-fd-section {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 14px;
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.dash-fd-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    color: var(--text);
+}
+
+.dash-fd-desc {
+    font-size: 11px;
+    color: var(--text-muted);
+    line-height: 1.4;
+}
+
+.dash-link {
+    color: var(--accent);
+    text-decoration: underline;
+}
+
+.dash-fd-row {
+    display: flex;
+    gap: 6px;
+}
+
+.dash-fd-input {
+    flex: 1;
+    background: var(--input-bg);
+    border: 1.5px solid var(--input-border);
+    border-radius: 8px;
+    padding: 8px 10px;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: var(--text);
+    outline: none;
+}
+
+.dash-fd-input:focus {
+    border-color: var(--accent);
+}
+
+.dash-fd-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background .15s;
+}
+
+.dash-fd-btn:hover {
+    background: var(--accent-hover);
+}
+
+.dash-fd-btn:disabled {
+    opacity: .7;
+    pointer-events: none;
+}
+
+.dash-fd-msg {
+    font-size: 11px;
+    line-height: 1.4;
+    color: var(--text);
+    padding: 6px 8px;
+    background: var(--input-bg);
+    border-radius: 6px;
+}
+
+/* ── Prediction bar ── */
+.admin-pred-bar-wrap {
+    padding: 0 12px 6px;
+}
+
+.admin-pred-bar {
+    display: flex;
+    height: 6px;
+    border-radius: 4px;
+    overflow: hidden;
+    background: var(--input-bg);
+}
+
+.admin-pred-fill.home {
+    background: var(--accent);
+    transition: width .3s;
+}
+
+.admin-pred-fill.draw {
+    background: var(--warning);
+    transition: width .3s;
+}
+
+.admin-pred-fill.away {
+    background: var(--danger);
+    transition: width .3s;
+}
+
+.admin-pred-stats {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 10px;
+    font-weight: 600;
+    margin-top: 3px;
+    color: var(--text-muted);
+}
+
+.admin-pred-stats .home { color: var(--accent); }
+.admin-pred-stats .draw { color: var(--warning); }
+.admin-pred-stats .away { color: var(--danger); }
+
+.admin-pred-stats .exact-count {
+    margin-left: auto;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+/* ── Audit ── */
+.audit-toolbar {
+    margin-bottom: 12px;
+}
+
+.audit-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.audit-pts {
+    font-weight: 900;
+    font-size: 15px;
+    color: var(--accent);
+    font-family: 'Space Grotesk', sans-serif;
+}

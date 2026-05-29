@@ -1,0 +1,56 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Admin UID
+    function isAdmin() {
+      return request.auth.uid == 'jXL20lPJY7Nv96E5zm4bmJtMir82';
+    }
+
+    function isOwner(uid) {
+      return request.auth.uid == uid;
+    }
+
+    function isLoggedIn() {
+      return request.auth != null && request.auth.uid != null;
+    }
+
+    // ── Usuarios ──
+    match /usuarios/{uid} {
+      allow read: if isLoggedIn();
+      allow create: if isOwner(uid);
+      allow update: if isOwner(uid);
+      allow delete: if isAdmin();
+    }
+
+    // ── Partidos ──
+    match /partidos/{matchId} {
+      allow read: if isLoggedIn();
+      allow write: if isAdmin();
+    }
+
+    // ── Resultados ──
+    match /resultados/{doc} {
+      allow read: if isLoggedIn();
+      allow write: if isAdmin();
+    }
+
+    // ── Config ──
+    match /config/{doc} {
+      allow read: if isLoggedIn();
+      allow write: if isAdmin();
+    }
+
+    // ── Pronósticos ──
+    match /pronosticos/{uid} {
+      allow read: if isLoggedIn();
+      allow write: if isOwner(uid) || isAdmin();
+    }
+
+    // ── Deny rest ──
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
